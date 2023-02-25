@@ -24,7 +24,6 @@ namespace equipmentOrderingService.Repositories
         }
         public override async Task<bool> Update(TechnicalEquipment entity)
         {
-
             try
             {
                 var existingEquipment = await dbSet.Where(x => x.Id == entity.Id).FirstOrDefaultAsync();
@@ -37,7 +36,7 @@ namespace equipmentOrderingService.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "{Repo}  Upsert method error", typeof(TechnicalEquipmentRepository));
+                _logger.LogError(ex, "{Repo}  Update method error", typeof(TechnicalEquipmentRepository));
                 return false;
 
             }
@@ -57,7 +56,7 @@ namespace equipmentOrderingService.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "{Repo}  Upsert method error", typeof(TechnicalEquipmentRepository));
+                _logger.LogError(ex, "{Repo}  Delete method error", typeof(TechnicalEquipmentRepository));
                 return false;
             }
         }

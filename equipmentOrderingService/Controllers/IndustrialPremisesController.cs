@@ -17,6 +17,7 @@ namespace equipmentOrderingService.Controllers
             _unitOfWork= unitOfWork;
         }
 
+        //Add new premises
         [HttpPost]
         public async Task<IActionResult> CreatePremises(IndustrialPremises industrialPremises)
         {
@@ -32,7 +33,9 @@ namespace equipmentOrderingService.Controllers
             return new JsonResult("Something went wrong") { StatusCode = 500 };
         }
 
-        [HttpGet("id")]
+        //Get premises by id
+        [HttpGet]
+        [Route("{id:guid}")]
         public async Task<IActionResult> GetPremises(Guid id)
         {
             var premises = await _unitOfWork.industrialPremises.GetById(id);
@@ -43,6 +46,7 @@ namespace equipmentOrderingService.Controllers
             return Ok(premises);
         }
 
+        //Get all premises
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -50,6 +54,35 @@ namespace equipmentOrderingService.Controllers
             return Ok(industrialPremises);
         }
 
+        //Update premises by id
+        [HttpPut]
+        [Route("{id:guid}")]
+        [ActionName("UpdatePremisesById")]
+        public async Task<IActionResult> UpdatePremises(Guid id, IndustrialPremises industrialPremises)
+        {
+            if(id!=industrialPremises.Id) 
+                return BadRequest();
+            await _unitOfWork.industrialPremises.Update(industrialPremises);
+            await _unitOfWork.CompleteAsync();
+
+            return NoContent();
+        }
+
+        //Delete premises
+        [HttpDelete]
+        [Route("{id:guid}")]
+        [ActionName("DeletePremisesById")]
+        public async Task<IActionResult> DeletePremises(Guid id)
+        {
+            var item = await _unitOfWork.industrialPremises.GetById(id);
+
+            if (item == null)
+                return BadRequest();
+            await _unitOfWork.industrialPremises.Delete(id);
+            await _unitOfWork.CompleteAsync();
+
+            return Ok(item);
+        }
 
     }
 }

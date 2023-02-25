@@ -40,7 +40,7 @@ namespace equipmentOrderingService.Repositories
             }
             catch(Exception ex)
             {
-                _logger.LogError(ex, "{Repo}  Upsert method error", typeof(IndustrialPremisesRepository));
+                _logger.LogError(ex, "{Repo}  Update method error", typeof(IndustrialPremisesRepository));
                 return false;
 
             }
@@ -60,7 +60,7 @@ namespace equipmentOrderingService.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "{Repo}  Upsert method error", typeof(IndustrialPremisesRepository));
+                _logger.LogError(ex, "{Repo}  Delete method error", typeof(IndustrialPremisesRepository));
                 return false;
             }
         }

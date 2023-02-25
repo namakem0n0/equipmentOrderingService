@@ -35,12 +35,13 @@ namespace equipmentOrderingService.Repositories
                     return await Add(entity);
                 existingСontract.Premises = entity.Premises;
                 existingСontract.Equipments = entity.Equipments;
+                existingСontract.EquipmentQuantity = entity.EquipmentQuantity;
 
                 return true;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "{Repo}  Upsert method error", typeof(OrderingContractRepository));
+                _logger.LogError(ex, "{Repo}  Update method error", typeof(OrderingContractRepository));
                 return false;
 
             }
@@ -60,7 +61,7 @@ namespace equipmentOrderingService.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "{Repo}  Upsert method error", typeof(OrderingContractRepository));
+                _logger.LogError(ex, "{Repo}  Delete method error", typeof(OrderingContractRepository));
                 return false;
             }
         }
