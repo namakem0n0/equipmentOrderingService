@@ -1,7 +1,9 @@
 ﻿using equipmentOrderingService.Data;
+using equipmentOrderingService.IConfiguration;
 using equipmentOrderingService.IRepositories;
 using equipmentOrderingService.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace equipmentOrderingService.Repositories
 {
@@ -16,7 +18,7 @@ namespace equipmentOrderingService.Repositories
         {
             try
             {
-                return await dbSet.ToListAsync();
+                return await dbSet.Include(oc=>oc.Premises).Include(oc=>oc.EquipmentType).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -34,7 +36,7 @@ namespace equipmentOrderingService.Repositories
                 if (existingСontract == null)
                     return await Add(entity);
                 existingСontract.Premises = entity.Premises;
-                existingСontract.Equipments = entity.Equipments;
+                existingСontract.EquipmentType = entity.EquipmentType;
                 existingСontract.EquipmentQuantity = entity.EquipmentQuantity;
 
                 return true;

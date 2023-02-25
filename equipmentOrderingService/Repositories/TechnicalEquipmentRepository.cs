@@ -60,5 +60,10 @@ namespace equipmentOrderingService.Repositories
                 return false;
             }
         }
+
+        public async Task<TechnicalEquipment> GetByName(string name)
+        {
+            return (TechnicalEquipment)await GetWhere(te => te.Name == name);
+        }
     }
 }

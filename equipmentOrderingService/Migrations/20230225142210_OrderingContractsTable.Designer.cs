@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using equipmentOrderingService.Data;
 
@@ -11,9 +12,11 @@ using equipmentOrderingService.Data;
 namespace equipmentOrderingService.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230225142210_OrderingContractsTable")]
+    partial class OrderingContractsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,15 +54,10 @@ namespace equipmentOrderingService.Migrations
                     b.Property<int>("EquipmentQuantity")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("EquipmentTypeId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid?>("PremisesId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EquipmentTypeId");
 
                     b.HasIndex("PremisesId");
 
@@ -78,24 +76,35 @@ namespace equipmentOrderingService.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("OrderingContractId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderingContractId");
 
                     b.ToTable("TechnicalEquipment");
                 });
 
             modelBuilder.Entity("equipmentOrderingService.Models.OrderingContract", b =>
                 {
-                    b.HasOne("equipmentOrderingService.Models.TechnicalEquipment", "EquipmentType")
-                        .WithMany()
-                        .HasForeignKey("EquipmentTypeId");
-
                     b.HasOne("equipmentOrderingService.Models.IndustrialPremises", "Premises")
                         .WithMany()
                         .HasForeignKey("PremisesId");
 
-                    b.Navigation("EquipmentType");
-
                     b.Navigation("Premises");
+                });
+
+            modelBuilder.Entity("equipmentOrderingService.Models.TechnicalEquipment", b =>
+                {
+                    b.HasOne("equipmentOrderingService.Models.OrderingContract", null)
+                        .WithMany("Equipments")
+                        .HasForeignKey("OrderingContractId");
+                });
+
+            modelBuilder.Entity("equipmentOrderingService.Models.OrderingContract", b =>
+                {
+                    b.Navigation("Equipments");
                 });
 #pragma warning restore 612, 618
         }

@@ -34,7 +34,8 @@ namespace equipmentOrderingService.Repositories
                 if (existingPremises == null)
                     return await Add(entity);
                 existingPremises.Name = entity.Name;
-                existingPremises.Area = entity.Area;
+                existingPremises.TotalArea = entity.TotalArea;
+                existingPremises.FreeArea = entity.FreeArea;
 
                 return true;
             }
@@ -63,6 +64,11 @@ namespace equipmentOrderingService.Repositories
                 _logger.LogError(ex, "{Repo}  Delete method error", typeof(IndustrialPremisesRepository));
                 return false;
             }
+        }
+
+        public async Task<IndustrialPremises> GetByName(string name)
+        {
+            return (IndustrialPremises)await GetWhere(ip => ip.Name == name);
         }
     }
 }

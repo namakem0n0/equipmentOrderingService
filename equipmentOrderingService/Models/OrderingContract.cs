@@ -7,12 +7,8 @@ namespace equipmentOrderingService.Models
     {
         [Key]
         public Guid Id { get; set; }
-        
-        public IndustrialPremises? Premises { get; set; }
-
-        public List<TechnicalEquipment>? Equipments { get; set; }
-
         public int EquipmentQuantity { get; set; }
-
+        public IndustrialPremises? Premises { get; set; }
+        public TechnicalEquipment? EquipmentType { get; set; }   
     }
 }

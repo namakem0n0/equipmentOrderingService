@@ -6,6 +6,7 @@ namespace equipmentOrderingService.IConfiguration
     {
         IIndustrialPremisesRepository industrialPremises { get; }
         ITechnicalEquipmentRepository technicalEquipment { get; }
+        IOrderingContractRepository orderingContract { get; }
 
         Task CompleteAsync();
     }

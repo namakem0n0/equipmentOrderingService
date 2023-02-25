@@ -13,6 +13,8 @@ namespace equipmentOrderingService.Data
 
         public ITechnicalEquipmentRepository technicalEquipment { get; private set; }
 
+        public IOrderingContractRepository orderingContract { get; private set; }
+
         public UnitOfWork(ApplicationDbContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
@@ -20,6 +22,7 @@ namespace equipmentOrderingService.Data
 
             industrialPremises = new IndustrialPremisesRepository(_context, _logger);
             technicalEquipment = new TechnicalEquipmentRepository(_context, _logger);
+            orderingContract = new OrderingContractRepository(_context, _logger);
 
         }
 

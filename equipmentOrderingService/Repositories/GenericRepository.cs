@@ -1,6 +1,7 @@
 ﻿using equipmentOrderingService.Data;
 using equipmentOrderingService.IRepositories;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace equipmentOrderingService.Repositories
 {
@@ -23,6 +24,10 @@ namespace equipmentOrderingService.Repositories
         {
             await dbSet.AddAsync(entity);
             return true;
+        }
+        public virtual async Task<IEnumerable<T>> GetWhere(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
         public virtual Task<bool> Delete(Guid id)
