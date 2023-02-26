@@ -1,4 +1,5 @@
 name: Build and deploy .NET Core application to windows webapp equipmentOrderingService20230226172025 with API Management Service equipmentOrderingServiceapi
+
 on:
   push:
     branches:
