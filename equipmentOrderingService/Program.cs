@@ -41,6 +41,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 //adding teh Unit of work to the DI container
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 

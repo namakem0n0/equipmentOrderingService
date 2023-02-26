@@ -3,6 +3,7 @@ using equipmentOrderingService.IConfiguration;
 using equipmentOrderingService.IRepositories;
 using equipmentOrderingService.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
 namespace equipmentOrderingService.Repositories
@@ -24,6 +25,19 @@ namespace equipmentOrderingService.Repositories
             {
                 _logger.LogError(ex, "{Repo} GetAll method error", typeof(OrderingContractRepository));
                 return new List<OrderingContract>();
+            }
+        }
+
+        public override async Task<IEnumerable<OrderingContract>> GetWhere(Expression<Func<OrderingContract, bool>> predicate)
+        {
+            try
+            {
+                return await dbSet.Where(predicate).Include(oc => oc.Premises).Include(oc => oc.EquipmentType).ToListAsync();
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "{Repo} GetAll method error", typeof(OrderingContractRepository));
+                return new OrderingContract[] { new OrderingContract() };
             }
         }
 
