@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qar5vZ6p/7+Uzpg+OiWTjB4IdbVj1dK7iYmq1o7/a+b40va3c3fxfqXGWRn0EsUQHYj9OF9t9SSey+GdtLqckg==",
+  "dgSpecHash": "MvupTkIgUg1i4QVthDjVAQzpVviBrXtdEiEk6lQr0ozYt1B6ntEzLKnM2yq3vBsiAMK+QHYUUGaN3kRFP9KlYQ==",
   "success": true,
-  "projectFilePath": "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\equipmentOrderingService.csproj",
+  "projectFilePath": "E:\\equipmentOrderingService\\equipmentOrderingService\\equipmentOrderingService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rrros\\.nuget\\packages\\azure.core\\1.28.0\\azure.core.1.28.0.nupkg.sha512",
     "C:\\Users\\rrros\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

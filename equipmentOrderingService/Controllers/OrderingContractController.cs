@@ -28,7 +28,7 @@ namespace equipmentOrderingService.Controllers
 
         //Get contract by id
         [HttpGet]
-        [Route("{id:guid}")]
+        [Route("GetContractById")]
         [ActionName("GetContractById")]
         public async Task<IActionResult> GetContract(string premisesName, string equipmentName, int Quantity)
         {

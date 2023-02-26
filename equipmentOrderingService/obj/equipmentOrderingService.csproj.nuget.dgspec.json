@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\equipmentOrderingService.csproj": {}
+    "E:\\equipmentOrderingService\\equipmentOrderingService\\equipmentOrderingService.csproj": {}
   },
   "projects": {
-    "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\equipmentOrderingService.csproj": {
+    "E:\\equipmentOrderingService\\equipmentOrderingService\\equipmentOrderingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\equipmentOrderingService.csproj",
+        "projectUniqueName": "E:\\equipmentOrderingService\\equipmentOrderingService\\equipmentOrderingService.csproj",
         "projectName": "equipmentOrderingService",
-        "projectPath": "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\equipmentOrderingService.csproj",
+        "projectPath": "E:\\equipmentOrderingService\\equipmentOrderingService\\equipmentOrderingService.csproj",
         "packagesPath": "C:\\Users\\rrros\\.nuget\\packages\\",
-        "outputPath": "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\obj\\",
+        "outputPath": "E:\\equipmentOrderingService\\equipmentOrderingService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
