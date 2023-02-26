@@ -2,8 +2,10 @@ using equipmentOrderingService.Data;
 using equipmentOrderingService.IConfiguration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Azure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
