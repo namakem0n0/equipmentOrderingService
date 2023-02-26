@@ -20,7 +20,6 @@ namespace equipmentOrderingService.Controllers
 
         //Get all contracts
         [HttpGet]
-        [Route("GetAllContracts")]
         public async Task<IActionResult> GetAll()
         {
             var orderingContract = await _unitOfWork.orderingContract.GetAll();
@@ -29,8 +28,8 @@ namespace equipmentOrderingService.Controllers
 
         //Get contract by id
         [HttpGet]
-        [Route("GetContractByNames")]
-        [ActionName("GetContractByNames")]
+        [Route("{id:guid}")]
+        [ActionName("GetContractById")]
         public async Task<IActionResult> GetContract(string premisesName, string equipmentName, int Quantity)
         {
             var orderingContract = await _unitOfWork.orderingContract
