@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dZ27MQV2ZqMMNha732gKrMAJm+o61SSFtOoswAM98TAHE54SJSF08CSKN2Dot4kOpAOFzvZDQqzxCHC7TipQbw==",
+  "dgSpecHash": "qar5vZ6p/7+Uzpg+OiWTjB4IdbVj1dK7iYmq1o7/a+b40va3c3fxfqXGWRn0EsUQHYj9OF9t9SSey+GdtLqckg==",
   "success": true,
   "projectFilePath": "E:\\job hunt\\equipmentOrdering\\equipmentOrderingService\\equipmentOrderingService.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rrros\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
+    "C:\\Users\\rrros\\.nuget\\packages\\azure.core\\1.28.0\\azure.core.1.28.0.nupkg.sha512",
     "C:\\Users\\rrros\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\rrros\\.nuget\\packages\\azure.security.keyvault.secrets\\4.4.0\\azure.security.keyvault.secrets.4.4.0.nupkg.sha512",
     "C:\\Users\\rrros\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\rrros\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\rrros\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
