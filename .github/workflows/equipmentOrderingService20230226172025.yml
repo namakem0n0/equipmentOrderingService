@@ -10,7 +10,7 @@ env:
   WORKING_DIRECTORY: ./equipmentOrderingService
   CONFIGURATION: Release
   AZURE_WEBAPP_PACKAGE_PATH: ./publish
-  AZURE_APIM_RESOURCE_PATH: /
+  AZURE_APIM_RESOURCE_PATH: /equipmentOrderingService
   AZURE_APIM_RESOURCEGROUP: rostyk
   AZURE_APIM_SERVICENAME: equipmentOrderingServiceapi
   AZURE_APIM_API_ID: equipmentOrderingService
